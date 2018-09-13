@@ -121,12 +121,14 @@
             table {
                 width: 100%;
                 table-layout: fixed;
-                margin-top: 10px;
             }
             td {
                 max-width: 0;
                 overflow: hidden;
                 word-wrap:break-word;
+            }
+            tbody{
+                vertical-align: top;
             }
             .disclaimer-note p{
                 font-size: 13px;
@@ -218,10 +220,11 @@
                         </td>
                         <td style="padding: 0px;">
                         <table>
-                            <tr><td>Paying Entity : EWAY</td></tr>
-                            <tr><td>Message</td></tr>
-                            <tr><td>Note**</td></tr>
-
+                            <tbody>
+                                <tr><td>Paying Entity : EWAY</td></tr>
+                                <tr><td>Message</td></tr>
+                                <tr><td style="border: none;">Note** ${transactionInvoice.note}</td></tr>
+                            </tbody>
                         </table></td>
                     </tr>
                 </table>
