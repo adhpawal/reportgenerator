@@ -23,7 +23,7 @@
             }
 
             .div-content{
-                width: 50%;
+                width: 100%;
                 float: left;
             }
 
@@ -53,7 +53,7 @@
             }
 
             .box div{
-                padding: 5px;
+                padding: 2px;
             }
 
             .border-bottom{
@@ -65,7 +65,7 @@
             }
 
             .div-content p{
-                margin: 3px 0;
+                margin: 1px 0;
             }
 
             span{
@@ -73,28 +73,33 @@
             }
 
             .logo{
-                width: 150px;
+                width: 220px;
                 float : left;
             }
             .invoice-number{
                 color: red;
                 font-weight: bold;
-                font-size: 26px;
+                font-size: 14px;
                 text-align: center;
             }
 
             .grey-title{
                 font-weight: bold;
+                font-size: 12px;
                 background-color: #c5c3c3;
             }
 
             .center-text{
+                font-size: 14px;
                 text-align: center;
             }
 
             .bold-text{
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: bold;
+            }
+            .p-text{
+                font-size:14px;
             }
             .signature-block{
                 font-weight: bold;
@@ -104,7 +109,8 @@
                 text-align: center;
             }
             .licensee-text p{
-                text-align: right;
+                text-align: left;
+                font-size: 11px;
             }
             .agent-text p{
                 text-align: left;
@@ -122,7 +128,7 @@
                 word-wrap:break-word;
             }
             .disclaimer-note p{
-                font-size: 10px;
+                font-size: 12px;
             }
         </style>
 
@@ -131,7 +137,13 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="logo"><img width="200px" src="https://beta.sodatransfer.com/img/logos/logo_moneytun.png" class="someClass ">
+                <div class="logo">
+                    <img width="200px" src="https://beta.sodatransfer.com/img/logos/logo_moneytun.png" class="someClass ">
+                    <div class="div-content licensee-text">
+                        <p>Licensee: Moneytun LLC</p>
+                        <p>3651 Lindell Rd Ste D225 Las Vegas, NV 89103</p>
+                        <p>Tel: 702-485-5886</p>
+                    </div>
                 </div>
                 <div class="top-content">
                     <div class="box-large">
@@ -151,18 +163,10 @@
             </div>
 
             <div class="row">
-                <div class="div-content licensee-text">
-                    <p>Licensee: Moneytun LLC</p>
-                    <p>3651 Lindell Rd Ste D225 Las Vegas, NV 89103</p>
-                    <p>Tel: 702-485-5886</p>
-                </div>
 
-                <div class="div-content agent-text">
-                    <p>Agent: Tranglo</p>
-                </div>
             </div>
 
-            <div class="row"">
+            <div class="row p-text">
                 <table>
                     <tr>
                         <td class="grey-title center-text">REMITTER</td>
@@ -228,7 +232,7 @@
             </div>
 
             <div class="row">
-                <h2 class="text-center">RIGHT TO REFUND</h2>
+                <h3 class="text-center">RIGHT TO REFUND</h3>
                 <div class="disclaimer-note">
                     <p>You, the customer, are entitled to a refund of the money to be transmitted as the result of this agreement if MONEYTUN LLC
                         does not forward the money received from you within 10 days of the date of its receipt, or does not give instructions
