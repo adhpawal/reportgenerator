@@ -105,7 +105,7 @@
                 font-weight: bold;
                 font-size: 16px;
                 font-style: italic;
-                margin: 20px 0;
+                margin: 0px 0;
                 text-align: center;
             }
             .licensee-text p{
@@ -121,6 +121,7 @@
             table {
                 width: 100%;
                 table-layout: fixed;
+                margin-top: 10px;
             }
             td {
                 max-width: 0;
@@ -128,7 +129,8 @@
                 word-wrap:break-word;
             }
             .disclaimer-note p{
-                font-size: 12px;
+                font-size: 13px;
+                font-style: italic;
             }
         </style>
 
@@ -232,7 +234,7 @@
             </div>
 
             <div class="row">
-                <h3 class="text-center">RIGHT TO REFUND</h3>
+                <h4 class="text-center">RIGHT TO REFUND</h4>
                 <div class="disclaimer-note">
                     <p>You, the customer, are entitled to a refund of the money to be transmitted as the result of this agreement if MONEYTUN LLC
                         does not forward the money received from you within 10 days of the date of its receipt, or does not give instructions
