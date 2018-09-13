@@ -34,7 +34,7 @@
             }
 
             td, th {
-                border: 1px solid #ddd;
+                border: 1px solid #ccc;
                 text-align: left;
                 padding: 8px;
             }
@@ -86,7 +86,7 @@
             .grey-title{
                 font-weight: bold;
                 font-size: 12px;
-                background-color: #c5c3c3;
+                background-color: #ddd;;
             }
 
             .center-text{
@@ -100,6 +100,7 @@
             }
             .p-text{
                 font-size:14px;
+                padding-top: 30px;
             }
             .signature-block{
                 font-weight: bold;
@@ -115,11 +116,11 @@
             .agent-text p{
                 text-align: left;
             }
-            .subtable tr td:first-child{
-                background-color: #ddd;
+            .subtable{
+                background-color: #ddd;;
             }
             table {
-                width: 100%;
+                width: 97%;
                 table-layout: fixed;
             }
             td {
@@ -173,60 +174,50 @@
             <div class="row p-text">
                 <table>
                     <tr>
-                        <td class="grey-title center-text">REMITTER</td>
-                        <td class="grey-title center-text">BENEFICIARY</td>
+                        <td colspan="2" class="grey-title center-text">REMITTER</td>
+                        <td colspan="2" class="grey-title center-text">BENEFICIARY</td>
                     </tr>
                     <tr >
-                        <td>
+                        <td colspan="2" >
                             <p>${transactionInvoice.senderFirstName} ${transactionInvoice.senderLastName}</p>
                             <p>${transactionInvoice.senderAddress}</p>
                             <p>${transactionInvoice.senderPhoneNumber}</p>
                         </td>
-                        <td>
+                        <td colspan="2">
                             <p>${transactionInvoice.receiverFirstName} ${transactionInvoice.receiverLastName}</p>
                             <p>${transactionInvoice.receiverAddress}</p>
                             <p>${transactionInvoice.receiverPhoneNumber}</p>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding: 0px;">
-                        <table class="subtable">
-                            <tr>
-                                <td>Amount</td>
-                                <td>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</td>
-                            </tr>
-
-                            <tr>
-                                <td>ExchangeRate/Currency</td>
-                                <td>${transactionInvoice.receiverAmount} ${transactionInvoice.receiverCurrency}</td>
-                            </tr>
-                            <tr>
-                                <td>Fee/Extra Charges</td>
-                                <td>${transactionInvoice.fee}/${transactionInvoice.extraFee} ${transactionInvoice.senderCurrency}</td>
-                            </tr>
-                            <tr>
-                                <td>Total Charges</td>
-                                <td>${transactionInvoice.totalFee} ${transactionInvoice.senderCurrency}</td>
-                            </tr>
-                            <tr>
-                                <td>Total Amount</td>
-                                <td>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</td>
-                            </tr>
-                            <tr>
-                                <td>To be Paid</td>
-                                <td>${transactionInvoice.receiverAmount} ${transactionInvoice.receiverCurrency}</td>
-                            </tr>
-                        </table>
-                        </td>
-                        <td style="padding: 0px;">
-                        <table>
-                            <tbody>
-                                <tr><td>Paying Entity : EWAY</td></tr>
-                                <tr><td>Message</td></tr>
-                                <tr><td style="border: none;">Note** ${transactionInvoice.note}</td></tr>
-                            </tbody>
-                        </table></td>
+                        <td class="subtable">Amount</td>
+                        <td>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</td>
+                        <td colspan="2">Paying Entity : EWAY</td>
                     </tr>
+
+                    <tr>
+                        <td class="subtable">ExchangeRate/Currency</td>
+                        <td>${transactionInvoice.receiverAmount} ${transactionInvoice.receiverCurrency}</td>
+                        <td colspan="2">Message</td>
+                    </tr>
+                    <tr>
+                        <td class="subtable">Fee/Extra Charges</td>
+                        <td>${transactionInvoice.fee}/${transactionInvoice.extraFee} ${transactionInvoice.senderCurrency}</td>
+                        <td colspan="2" rowspan="4">Note** ${transactionInvoice.note}</td>
+                    </tr>
+                    <tr>
+                        <td class="subtable">Total Charges</td>
+                        <td>${transactionInvoice.totalFee} ${transactionInvoice.senderCurrency}</td>
+                    </tr>
+                    <tr>
+                        <td class="subtable">Total Amount</td>
+                        <td>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</td>
+                    </tr>
+                    <tr>
+                        <td class="subtable">To be Paid</td>
+                        <td>${transactionInvoice.receiverAmount} ${transactionInvoice.receiverCurrency}</td>
+                    </tr>
+
                 </table>
             </div>
 
