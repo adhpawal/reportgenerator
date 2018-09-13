@@ -11,6 +11,21 @@ public class TransactionInvoiceTempStorageInfo {
     private String xhtmlPath;
     private String pdfPath;
     private String pdfFileName;
+    private String storagePath;
+    private String fileNameWithoutExtension;
+
+    /**
+     * Set Default values for Invoice Generation.
+     */
+    public TransactionInvoiceTempStorageInfo(String fileNameWithoutExtension) {
+        this.setTemplateDirectoryPath("/tmp/invoice/");
+        this.setTemplateFileName("transaction_invoice");
+        this.setTempBasePath("/tmp/invoice/");
+        this.setHtmlPath(this.getTempBasePath() + fileNameWithoutExtension+".html");
+        this.setXhtmlPath(this.getTempBasePath() + fileNameWithoutExtension+".xhtml");
+        this.setPdfPath(this.getTempBasePath() + fileNameWithoutExtension+".pdf");
+        this.fileNameWithoutExtension = fileNameWithoutExtension;
+    }
 
     public String getTempBasePath() {
         return tempBasePath;
@@ -66,5 +81,21 @@ public class TransactionInvoiceTempStorageInfo {
 
     public void setPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
+    }
+
+    public String getStoragePath() {
+        return storagePath;
+    }
+
+    public void setStoragePath(String storagePath) {
+        this.storagePath = storagePath;
+    }
+
+    public String getFileNameWithoutExtension() {
+        return fileNameWithoutExtension;
+    }
+
+    public void setFileNameWithoutExtension(String fileNameWithoutExtension) {
+        this.fileNameWithoutExtension = fileNameWithoutExtension;
     }
 }

@@ -15,13 +15,7 @@ import java.time.LocalDate;
 public class PdfGeneratorDemo {
 
     public static void main(String[] args) {
-        TransactionInvoiceTempStorageInfo transactionInvoiceTempStorageInfo = new TransactionInvoiceTempStorageInfo();
-        transactionInvoiceTempStorageInfo.setTemplateDirectoryPath("src/main/resources/templates");
-        transactionInvoiceTempStorageInfo.setTemplateFileName("transaction_invoice");
-        transactionInvoiceTempStorageInfo.setTempBasePath("/tmp/invoice/");
-        transactionInvoiceTempStorageInfo.setHtmlPath(transactionInvoiceTempStorageInfo.getTempBasePath() + "transaction_invoice.html");
-        transactionInvoiceTempStorageInfo.setXhtmlPath(transactionInvoiceTempStorageInfo.getTempBasePath() + "transaction_invoice.xhtml");
-        transactionInvoiceTempStorageInfo.setPdfPath(transactionInvoiceTempStorageInfo.getTempBasePath() + "transaction_invoice.pdf");
+        TransactionInvoiceTempStorageInfo transactionInvoiceTempStorageInfo = new TransactionInvoiceTempStorageInfo("pawal");
 
         TransactionInvoice transactionInvoice = new TransactionInvoiceBuilder()
                 .setTransactionReferenceNumber("169023527528")
@@ -42,6 +36,7 @@ public class PdfGeneratorDemo {
                 .setReceiverLastName("NEUPANE")
                 .setReceiverAddress("BALAJU KATHMANDU, NEPAL, NEPAL")
                 .setReceiverPhoneNumber("9843050322")
+                .setReferenceNumber("MTN-20199123-12312")
                 .setSenderAmount(BigDecimal.valueOf(500))
                 .setExchangeRate(BigDecimal.valueOf(105.39))
                 .setFee(BigDecimal.valueOf(5))

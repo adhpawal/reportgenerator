@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class TransactionInvoice {
 
     private String transactionReferenceNumber;
+    private String referenceNumber;
     private String senderFirstName;
     private String senderMiddleName;
     private String senderLastName;
@@ -376,5 +377,13 @@ public class TransactionInvoice {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
     }
 }

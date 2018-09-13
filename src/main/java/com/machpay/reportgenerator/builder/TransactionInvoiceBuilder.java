@@ -50,6 +50,7 @@ public class TransactionInvoiceBuilder {
     private String agentAddress;
     private String agentPhoneNumber;
     private String note;
+    private String referenceNumber;
 
     public TransactionInvoiceBuilder setTransactionReferenceNumber(String transactionReferenceNumber) {
         this.transactionReferenceNumber = transactionReferenceNumber;
@@ -256,6 +257,11 @@ public class TransactionInvoiceBuilder {
         return this;
     }
 
+    public TransactionInvoiceBuilder setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
+        return this;
+    }
+
     public TransactionInvoice build(){
         TransactionInvoice transactionInvoice = new TransactionInvoice();
         transactionInvoice.setTransactionReferenceNumber(this.transactionReferenceNumber);
@@ -299,6 +305,7 @@ public class TransactionInvoiceBuilder {
         transactionInvoice.setAgentAddress(this.agentAddress);
         transactionInvoice.setAgentPhoneNumber(this.agentPhoneNumber);
         transactionInvoice.setNote(this.note);
+        transactionInvoice.setReferenceNumber(this.referenceNumber);
         return transactionInvoice;
     }
 }

@@ -4,6 +4,7 @@ import com.machpay.reportgenerator.dto.TransactionInvoice;
 import com.machpay.reportgenerator.dto.TransactionInvoiceTempStorageInfo;
 import com.machpay.reportgenerator.service.ReportGeneratorService;
 import com.machpay.reportgenerator.service.TransactionInvoiceGenerator;
+import com.machpay.reportgenerator.util.FileUtils;
 import com.machpay.reportgenerator.util.XhtmlToHtmlConverter;
 
 import java.util.HashMap;
@@ -17,6 +18,8 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
     @Override
     public void generateTransactionInvoice(TransactionInvoice transactionInvoice,TransactionInvoiceTempStorageInfo transactionInvoiceTempStorageInfo) {
 
+        FileUtils.createDirectoryIfNotExist(transactionInvoiceTempStorageInfo.getTempBasePath());
+        
         // Convert To Html with apache free marker
         convertToHtml(transactionInvoice,transactionInvoiceTempStorageInfo);
 
@@ -33,7 +36,9 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
         Map<String, Object> input = new HashMap<>();
         input.put("transactionInvoice",transactionInvoice);
         TemplateManagerServiceImpl templateManagerServiceImpl = new TemplateManagerServiceImpl();
+        if("California".equalsIgnoreCase(transactionInvoice.getSenderState())){
+            transactionInvoiceTempStorageInfo.setTemplateFileName("transaction_invoice_ca");
+        }
         templateManagerServiceImpl.processTemplate(transactionInvoiceTempStorageInfo.getTemplateFileName(),transactionInvoiceTempStorageInfo.getHtmlPath(),input);
     }
-
 }

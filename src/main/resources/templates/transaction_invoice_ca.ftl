@@ -18,7 +18,7 @@
             }
 
             .top-content{
-                width: 64.667%;
+                width: 67.667%;
                 float: right;
             }
 
@@ -34,20 +34,13 @@
             }
 
             td, th {
-                border: 1px solid #ddd;
+                border: 1px solid #dddddd;
                 text-align: left;
                 padding: 8px;
             }
             .box{
-                width: 30%;
-                border: 1px solid #000;
-                margin: 3px;
-                margin-right: 25px;
-                float: right;
-            }
-            .box-large {
-                width: 60%;
-                border: 1px solid #000;
+                width: 45%;
+                border: 1px solid #000000;
                 margin: 3px;
                 float: left;
             }
@@ -57,7 +50,7 @@
             }
 
             .border-bottom{
-                border-bottom: 1px solid #000;
+                border-bottom: 1px solid #000000;
             }
 
             .text-center{
@@ -73,19 +66,19 @@
             }
 
             .logo{
-                width: 150px;
+                width: 200px;
                 float : left;
             }
             .invoice-number{
                 color: red;
                 font-weight: bold;
-                font-size: 26px;
+                font-size: 32px;
                 text-align: center;
             }
 
             .grey-title{
                 font-weight: bold;
-                background-color: #c5c3c3;
+                background-color: grey;
             }
 
             .center-text{
@@ -93,7 +86,7 @@
             }
 
             .bold-text{
-                font-size: 16px;
+                font-size: 24px;
                 font-weight: bold;
             }
             .signature-block{
@@ -109,20 +102,20 @@
             .agent-text p{
                 text-align: left;
             }
+            .user-info{
+                display: block;
+            }
             .subtable tr td:first-child{
                 background-color: #ddd;
             }
             table {
                 width: 100%;
-                table-layout: fixed;
             }
             td {
                 max-width: 0;
                 overflow: hidden;
-                word-wrap:break-word;
-            }
-            .disclaimer-note p{
-                font-size: 10px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         </style>
 
@@ -131,21 +124,19 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="logo"><img width="200px" src="https://beta.sodatransfer.com/img/logos/logo_moneytun.png" class="someClass ">
+                <div class="logo"><img src="https://beta.sodatransfer.com/img/logos/logo_moneytun.png" class="someClass "></img>
                 </div>
                 <div class="top-content">
-                    <div class="box-large">
-                        <div class="border-bottom center-text bold-text">Transaction Number</div>
+                    <div class="box">
+                        <div class="border-bottom center-text">Transaction Number</div>
                         <div class="border-bottom invoice-number center-text">${transactionInvoice.transactionReferenceNumber}</div>
-                        <div class="border-bottom center-text bold-text">Transaction Reference Number</div>
-                        <div class="border-bottom invoice-number center-text">${transactionInvoice.referenceNumber}</div>
                         <div class="bold-text center-text">${transactionInvoice.paymentType}</div>
                     </div>
                     <div class="box">
                         <div class="border-bottom grey-title center-text">Customer's Copy</div>
                         <div class="border-bottom center-text" >${transactionInvoice.transactionDate}</div>
                         <div class="border-bottom grey-title center-text">Available on</div>
-                        <div class="border-bottom center-text" >${transactionInvoice.estimatedDeliveryDate}</div>
+                        <div>${transactionInvoice.estimatedDeliveryDate}</div>
                     </div>
                 </div>
             </div>
@@ -165,8 +156,8 @@
             <div class="row"">
                 <table>
                     <tr>
-                        <td class="grey-title center-text">REMITTER</td>
-                        <td class="grey-title center-text">BENEFICIARY</td>
+                        <td class="grey-title center-text">Remitter</td>
+                        <td class="grey-title center-text">Beneficiary</td>
                     </tr>
                     <tr >
                         <td>
@@ -181,7 +172,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding: 0px;">
+                        <td>
                         <table class="subtable">
                             <tr>
                                 <td>Amount</td>
@@ -194,11 +185,11 @@
                             </tr>
                             <tr>
                                 <td>Fee/Extra Charges</td>
-                                <td>${transactionInvoice.fee}/${transactionInvoice.extraFee} ${transactionInvoice.senderCurrency}</td>
+                                <td>${transactionInvoice.fee}/${transactionInvoice.extraFee}</td>
                             </tr>
                             <tr>
                                 <td>Total Charges</td>
-                                <td>${transactionInvoice.totalFee} ${transactionInvoice.senderCurrency}</td>
+                                <td>${transactionInvoice.totalFee}</td>
                             </tr>
                             <tr>
                                 <td>Total Amount</td>
@@ -210,9 +201,9 @@
                             </tr>
                         </table>
                         </td>
-                        <td style="padding: 0px;">
-                        <table>
-                            <tr><td>Paying Entity : EWAY</td></tr>
+                        <td><table>
+                            <tr><td>Paying Entity</td></tr>
+                            <tr><td>EWAY</td></tr>
                             <tr><td>Message</td></tr>
                             <tr><td>Note**</td></tr>
 
@@ -223,13 +214,13 @@
 
             <div class="row">
                 <div class="signature-block">
-                    <div>Digitally Signed By ${transactionInvoice.senderFirstName} ${transactionInvoice.senderLastName}</div>
+                    <div>Digitally Signed By Sender Name</div>
                 </div>
             </div>
 
             <div class="row">
                 <h2 class="text-center">RIGHT TO REFUND</h2>
-                <div class="disclaimer-note">
+                <div>
                     <p>You, the customer, are entitled to a refund of the money to be transmitted as the result of this agreement if MONEYTUN LLC
                         does not forward the money received from you within 10 days of the date of its receipt, or does not give instructions
                         committing an equivalent amount of money to the person designated by you within 10 days of the date of the receipt of the
@@ -243,7 +234,7 @@
                     <p>
                         If you want a refund, you must mail or deliver your written request to MONEYTUN LLC at 3651 Lindell Rd Suite D225, Las
                         Vegas NV 89103. If you do not receive your refund, you may be entitled to your money back plus a penalty of up to $1,000 and
-                        attorney's fees pursuant to Section 2102 of the Nevada Financial Code.
+                        attorney's fees pursuant to Section 2102 of the California Financial Code.
                     </p>
                 </div>
             </div>

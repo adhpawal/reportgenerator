@@ -4,12 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kiranpariyar</groupId>
+    <groupId>com.lftechnology</groupId>
     <artifactId>reportgenerator</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>reportgenerator</name>
-
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -39,6 +38,11 @@
             <groupId>net.sf.jtidy</groupId>
             <artifactId>jtidy</artifactId>
             <version>r938</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lftechnology</groupId>
+            <artifactId>machpay-common</artifactId>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 
