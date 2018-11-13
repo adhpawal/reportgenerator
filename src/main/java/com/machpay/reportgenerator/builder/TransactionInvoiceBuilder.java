@@ -10,6 +10,7 @@ import java.time.LocalDate;
  */
 public class TransactionInvoiceBuilder {
     private String transactionReferenceNumber;
+    private String transactionStatus;
     private String senderFirstName;
     private String senderMiddleName;
     private String senderLastName;
@@ -54,6 +55,11 @@ public class TransactionInvoiceBuilder {
 
     public TransactionInvoiceBuilder setTransactionReferenceNumber(String transactionReferenceNumber) {
         this.transactionReferenceNumber = transactionReferenceNumber;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setTransactionStatus(String transactionStatus) {
+        this.transactionStatus = transactionStatus;
         return this;
     }
 
@@ -265,6 +271,7 @@ public class TransactionInvoiceBuilder {
     public TransactionInvoice build(){
         TransactionInvoice transactionInvoice = new TransactionInvoice();
         transactionInvoice.setTransactionReferenceNumber(this.transactionReferenceNumber);
+        transactionInvoice.setTransactionStatus(this.transactionStatus);
         transactionInvoice.setSenderFirstName(this.senderFirstName);
         transactionInvoice.setSenderMiddleName(this.senderMiddleName);
         transactionInvoice.setSenderLastName(this.senderLastName);

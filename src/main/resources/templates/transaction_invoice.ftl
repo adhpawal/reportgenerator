@@ -7,6 +7,7 @@
                 width: 100%;
                 height: auto;
                 padding: 20px;
+                position: relative;
             }
 
             .row{
@@ -135,11 +136,34 @@
                 font-size: 13px;
                 font-style: italic;
             }
+            .cancelled{
+                color: #fbb4bb;
+                font-size:100px;
+                top: 0px;
+                right: 0px;
+                width:100%;
+                text-align: center;
+                margin-top:350px;
+                filter: alpha(opacity=0.5);
+
+            }
+            .background{
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 50;
+                overflow: hidden;
+            }
         </style>
 
     </head>
 
     <body>
+        <#if transactionInvoice.transactionStatus=="Cancelled">
+            <p class="background cancelled">CANCELLED</p>
+        </#if>
         <div class="container">
             <div class="row">
                 <div class="logo">

@@ -19,6 +19,7 @@ public class PdfGeneratorDemo {
 
         TransactionInvoice transactionInvoice = new TransactionInvoiceBuilder()
                 .setTransactionReferenceNumber("169023527528")
+                .setTransactionStatus("Cancelled")
                 .setPaymentType("Account Deposit")
                 .setTransactionDate(LocalDate.now())
                 .setEstimatedDeliveryDate(LocalDate.now())
