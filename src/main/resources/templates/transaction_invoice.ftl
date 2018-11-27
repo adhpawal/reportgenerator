@@ -167,7 +167,7 @@
         <div class="container">
             <div class="row">
                 <div class="logo">
-                    <img width="200px" src="https://beta.sodatransfer.com/img/logos/logo_moneytun.png" class="someClass ">
+                    <img width="200px" src="https://s3.amazonaws.com/com-machpay-raas/logo_moneytun.a8145ef2.png" class="someClass ">
                     <div class="div-content licensee-text">
                         <p>Licensee: Moneytun LLC</p>
                         <p>3651 Lindell Rd Ste D225 Las Vegas, NV 89103</p>
