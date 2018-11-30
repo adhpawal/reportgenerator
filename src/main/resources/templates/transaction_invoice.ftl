@@ -161,8 +161,8 @@
     </head>
 
     <body>
-        <#if transactionInvoice.transactionStatus=="Cancelled">
-            <p class="background cancelled">CANCELLED</p>
+        <#if transactionInvoice.transactionStatus=="CANCELED">
+            <p class="background cancelled">CANCELED</p>
         </#if>
         <div class="container">
             <div class="row">
