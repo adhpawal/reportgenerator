@@ -23,12 +23,12 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
         // Convert To Html with apache free marker
         convertToHtml(transactionInvoice,transactionInvoiceTempStorageInfo);
 
-        // Convert To Xhtml with jtidy
-        XhtmlToHtmlConverter.convertXHTMLToHTML(transactionInvoiceTempStorageInfo.getHtmlPath(), transactionInvoiceTempStorageInfo.getXhtmlPath());
+        // Convert To Xhtml with Jtidy
+//        XhtmlToHtmlConverter.convertXHTMLToHTML(transactionInvoiceTempStorageInfo.getHtmlPath(), transactionInvoiceTempStorageInfo.getXhtmlPath());
 
         // Convert to PDF and store temp location
         ReportGeneratorService reportGeneratorService = new PdfGeneratorServiceImpl();
-        reportGeneratorService.generate(transactionInvoiceTempStorageInfo.getXhtmlPath(),transactionInvoiceTempStorageInfo.getPdfPath());
+        reportGeneratorService.generate(transactionInvoiceTempStorageInfo.getHtmlPath(),transactionInvoiceTempStorageInfo.getPdfPath());
 
     }
 
@@ -36,9 +36,6 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
         Map<String, Object> input = new HashMap<>();
         input.put("transactionInvoice",transactionInvoice);
         TemplateManagerServiceImpl templateManagerServiceImpl = new TemplateManagerServiceImpl();
-        if("California".equalsIgnoreCase(transactionInvoice.getSenderState())){
-            transactionInvoiceTempStorageInfo.setTemplateFileName("transaction_invoice_ca");
-        }
         templateManagerServiceImpl.processTemplate(transactionInvoiceTempStorageInfo.getTemplateFileName(),transactionInvoiceTempStorageInfo.getHtmlPath(),input);
     }
 }

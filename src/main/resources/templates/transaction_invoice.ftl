@@ -19,7 +19,7 @@
             }
 
             .top-content{
-                width: 64.667%;
+                width: 68%;
                 float: right;
             }
 
@@ -34,20 +34,35 @@
                 width: 100%;
             }
 
-            td, th {
-                border: 1px solid #ccc;
+            .p-text td, th {
+                border: 2px solid black;
+            }
+            .p-text {
                 text-align: left;
+                font-size: 12px;
                 padding: 8px;
             }
+            .p-text p{
+                text-align: left;
+                font-size: 14px;
+            }
+            .table-header td, .table-header p {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .table-header {
+                font-size: 14px;
+                padding-left: 8px;
+            }
             .box{
-                width: 30%;
+                width: 45%;
                 border: 1px solid #000;
                 margin: 3px;
                 margin-right: 25px;
                 float: right;
             }
             .box-large {
-                width: 60%;
+                width: 45%;
                 border: 1px solid #000;
                 margin: 3px;
                 float: left;
@@ -91,17 +106,12 @@
             }
 
             .center-text{
-                font-size: 14px;
+                font-size: 12px;
                 text-align: center;
             }
 
             .bold-text{
-                font-size: 14px;
                 font-weight: bold;
-            }
-            .p-text{
-                font-size:14px;
-                padding-top: 30px;
             }
             .signature-block{
                 font-weight: bold;
@@ -111,8 +121,7 @@
                 text-align: center;
             }
             .licensee-text p{
-                text-align: left;
-                font-size: 11px;
+                text-align: right;
             }
             .agent-text p{
                 text-align: left;
@@ -156,6 +165,15 @@
                 z-index: 50;
                 overflow: hidden;
             }
+            .license-agent-content td{
+                font-size: 13px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .amount p{
+                text-align: right;
+                padding-right: 5px;
+            }
         </style>
 
     </head>
@@ -167,12 +185,11 @@
         <div class="container">
             <div class="row">
                 <div class="logo">
-                    <img width="200px" src="https://s3.amazonaws.com/com-machpay-raas/logo_moneytun.a8145ef2.png" class="someClass ">
-                    <div class="div-content licensee-text">
-                        <p>Licensee: Moneytun LLC</p>
-                        <p>3651 Lindell Rd Ste D225 Las Vegas, NV 89103</p>
-                        <p>Tel: 702-485-5886</p>
-                    </div>
+                <#if transactionInvoice.senderState=="California">
+                    <img width="200px" src="https://s3.amazonaws.com/com-machpay-raas/assets/logo_moneytun_california.png" class="someClass "></img>
+                <#else>
+                    <img width="200px" src="https://s3.amazonaws.com/com-machpay-raas/assets/logo_moneytun.png" class="someClass "></img>
+                </#if>
                 </div>
                 <div class="top-content">
                     <div class="box-large">
@@ -180,7 +197,7 @@
                         <div class="border-bottom invoice-number center-text">${transactionInvoice.transactionReferenceNumber}</div>
                         <div class="border-bottom center-text bold-text">Transaction Reference Number</div>
                         <div class="border-bottom invoice-number center-text">${transactionInvoice.referenceNumber}</div>
-                        <div class="bold-text center-text">${transactionInvoice.paymentType}</div>
+                        <div class="bold-text center-text">${transactionInvoice.paymentType.toUpperCase()}</div>
                     </div>
                     <div class="box">
                         <div class="border-bottom grey-title center-text">Customer's Copy</div>
@@ -191,55 +208,83 @@
                 </div>
             </div>
 
-            <div class="row">
-
+            <div class="row license-agent-content">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="div-content licensee-text bold-text">
+                                <p>Licensee: Moneytun LLC</p>
+                                <p>3651 Lindell Rd Ste D225 Las Vegas, NV 89103</p>
+                                <p>Tel: 702-485-5886</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="div-content agent-text bold-text">
+                                <p>Agent: ${transactionInvoice.agentName}</p>
+                                <p>${transactionInvoice.agentAddress}</p>
+                                <p>Tel: ${transactionInvoice.agentPhoneNumber}</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
             <div class="row p-text">
                 <table>
-                    <tr>
-                        <td colspan="2" class="grey-title center-text">REMITTER</td>
-                        <td colspan="2" class="grey-title center-text">BENEFICIARY</td>
+                    <tr class="table-header">
+                        <td colspan="2" class="grey-title">REMITTER</td>
+                        <td colspan="2" class="grey-title">BENEFICIARY</td>
                     </tr>
                     <tr >
-                        <td colspan="2" >
-                            <p>${transactionInvoice.senderFirstName} ${transactionInvoice.senderLastName}</p>
-                            <p>${transactionInvoice.senderAddress}</p>
-                            <p>${transactionInvoice.senderPhoneNumber}</p>
+                        <td colspan="2" class="p-text">
+                            <p>${transactionInvoice.senderFirstName} ${transactionInvoice.senderLastName}<br></br>
+                            ${transactionInvoice.senderAddress}<br></br>
+                            Tel: ${transactionInvoice.senderPhoneNumber}</p>
                         </td>
-                        <td colspan="2">
-                            <p>${transactionInvoice.receiverFirstName} ${transactionInvoice.receiverLastName}</p>
-                            <p>${transactionInvoice.receiverAddress}</p>
-                            <p>${transactionInvoice.receiverPhoneNumber}</p>
+                        <td colspan="2" class="p-text">
+                            <p>${transactionInvoice.receiverFirstName} ${transactionInvoice.receiverLastName}<br></br>
+                            ${transactionInvoice.receiverAddress}<br></br>
+                            Tel: ${transactionInvoice.receiverPhoneNumber}</p>
                         </td>
                     </tr>
                     <tr>
-                        <td class="subtable">Amount</td>
-                        <td>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</td>
-                        <td colspan="2">Paying Entity : EWAY</td>
+                        <td class="subtable bold-text"><p class="table-header">Amount</p></td>
+                        <td class="amount"><p>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</p></td>
+                        <td colspan="2" class="subtable bold-text"><p class="table-header">Paying Entity</p></td>
                     </tr>
 
                     <tr>
-                        <td class="subtable">ExchangeRate/Currency</td>
-                        <td>${transactionInvoice.receiverAmount} ${transactionInvoice.receiverCurrency}</td>
-                        <td colspan="2">Message</td>
+                        <td class="subtable bold-text"><p class="table-header">ExchangeRate/Currency</p></td>
+                        <td class="amount"><p>${transactionInvoice.exchangeRate} <br></br>${transactionInvoice.receiverCurrency}</p></td>
+                        <td colspan="2" rowspan="3" class="amount"><p>
+                            VTNetwork Limited<br></br>
+
+                            No. 5 Beckley Street, off Adeyi<br></br>
+
+
+                            Old Bodija, Ibadan. Oyo-State, Nigeria<br></br>
+
+                            Tel:   07041911945, 08138994140<br></br>
+
+                        </p></td>
                     </tr>
                     <tr>
-                        <td class="subtable">Fee/Extra Charges</td>
-                        <td>${transactionInvoice.fee}/${transactionInvoice.extraFee} ${transactionInvoice.senderCurrency}</td>
-                        <td colspan="2" rowspan="4">Note** ${transactionInvoice.note}</td>
+                        <td class="subtable bold-text"><p class="table-header">Fee/Extra Charges</p></td>
+                        <td class="amount"><p>${transactionInvoice.fee}/${transactionInvoice.extraFee} ${transactionInvoice.senderCurrency}</p></td>
+
                     </tr>
                     <tr>
-                        <td class="subtable">Total Charges</td>
-                        <td>${transactionInvoice.totalFee} ${transactionInvoice.senderCurrency}</td>
+                        <td class="subtable bold-text"><p class="table-header">Total Charges</p></td>
+                        <td class="amount"><p>${transactionInvoice.totalFee} ${transactionInvoice.senderCurrency}</p></td>
                     </tr>
                     <tr>
-                        <td class="subtable">Total Amount</td>
-                        <td>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</td>
+                        <td class="subtable bold-text"><p class="table-header">Total Amount</p></td>
+                        <td class="amount bold-text"><p>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</p></td>
+                        <td colspan="2" rowspan="2" class="p-text"><p>Note** ${transactionInvoice.note}</p></td>
                     </tr>
                     <tr>
-                        <td class="subtable">To be Paid</td>
-                        <td>${transactionInvoice.receiverAmount} ${transactionInvoice.receiverCurrency}</td>
+                        <td class="subtable bold-text"><p class="table-header">To be Paid</p></td>
+                        <td class="amount bold-text"><p>${transactionInvoice.receiverAmount} ${transactionInvoice.receiverCurrency}</p></td>
                     </tr>
 
                 </table>
