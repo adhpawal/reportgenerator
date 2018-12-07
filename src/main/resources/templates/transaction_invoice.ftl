@@ -13,7 +13,6 @@
             .row{
                 width: 100%;
                 clear: both;
-                margin: 10px 0;
                 height: auto;
                 overflow: auto;
             }
@@ -249,7 +248,7 @@
                     </tr>
                     <tr>
                         <td class="subtable bold-text"><p class="table-header">Amount</p></td>
-                        <td class="amount"><p>${transactionInvoice.senderTotalAmount} ${transactionInvoice.senderCurrency}</p></td>
+                        <td class="amount"><p>${transactionInvoice.senderAmount} ${transactionInvoice.senderCurrency}</p></td>
                         <td colspan="2" class="subtable bold-text"><p class="table-header">Paying Entity</p></td>
                     </tr>
 

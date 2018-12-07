@@ -27,7 +27,7 @@ public class PdfGeneratorDemo {
                 .setMsbName("Moneytun LLC")
                 .setMsbAddress("3651 Lindell Rd Ste D225 Las Vegas, NV 89103")
                 .setMsbPhoneNumber("702-485-5886")
-                .setAgentName("REBTEL")
+                .setAgentName(" Rebtel Networks AB")
                 .setAgentAddress("Jakobsbergsgatan 16 111 44 Stockholm Sweden")
                 .setAgentPhoneNumber("415-644-5933")
                 .setSenderFirstName("JOHN")
