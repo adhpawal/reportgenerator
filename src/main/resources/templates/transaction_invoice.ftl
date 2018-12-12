@@ -195,7 +195,7 @@
                         <div class="border-bottom center-text bold-text">Transaction Number</div>
                         <div class="border-bottom invoice-number center-text">${transactionInvoice.transactionReferenceNumber}</div>
                         <div class="border-bottom center-text bold-text">Transaction Reference Number</div>
-                        <div class="border-bottom invoice-number center-text">${transactionInvoice.referenceNumber}</div>
+                        <div class="border-bottom center-text">${transactionInvoice.referenceNumber}</div>
                         <div class="bold-text center-text">${transactionInvoice.paymentType.toUpperCase()}</div>
                     </div>
                     <div class="box">
@@ -211,17 +211,13 @@
                 <table>
                     <tr>
                         <td>
-                            <div class="div-content licensee-text bold-text">
-                                <p>Licensee: Moneytun LLC</p>
-                                <p>3651 Lindell Rd Ste D225 Las Vegas, NV 89103</p>
-                                <p>Tel: 702-485-5886</p>
-                            </div>
+
                         </td>
                         <td>
-                            <div class="div-content agent-text bold-text">
-                                <p>Agent: ${transactionInvoice.agentName}</p>
-                                <p>${transactionInvoice.agentAddress}</p>
-                                <p>Tel: ${transactionInvoice.agentPhoneNumber}</p>
+                            <div class="div-content licensee-text bold-text">
+                                <p>Service Provider: ${transactionInvoice.msbName}</p>
+                                <p>${transactionInvoice.msbAddress}</p>
+                                <p>Tel: ${transactionInvoice.msbPhoneNumber}</p>
                             </div>
                         </td>
                     </tr>
@@ -298,7 +294,7 @@
             <div class="row">
                 <h4 class="text-center">RIGHT TO REFUND</h4>
                 <div class="disclaimer-note">
-                    <p>You, the customer, are entitled to a refund of the money to be transmitted as the result of this agreement if MONEYTUN LLC
+                    <p>You, the customer, are entitled to a refund of the money to be transmitted as the result of this agreement if ${transactionInvoice.msbName}
                         does not forward the money received from you within 10 days of the date of its receipt, or does not give instructions
                         committing an equivalent amount of money to the person designated by you within 10 days of the date of the receipt of the
                         funds from you unless otherwise instructed by you.</p>
@@ -309,8 +305,8 @@
                     </p>
 
                     <p>
-                        If you want a refund, you must mail or deliver your written request to MONEYTUN LLC at 3651 Lindell Rd Suite D225, Las
-                        Vegas NV 89103. If you do not receive your refund, you may be entitled to your money back plus a penalty of up to $1,000 and
+                        If you want a refund, you must mail or deliver your written request to ${transactionInvoice.msbName} at ${transactionInvoice.msbAddress}.
+                        If you do not receive your refund, you may be entitled to your money back plus a penalty of up to $1,000 and
                         attorney's fees pursuant to Section 2102 of the Nevada Financial Code.
                     </p>
                 </div>
