@@ -44,8 +44,8 @@ public class TemplateManagerServiceImpl implements TemplateManagerService {
         }
     }
 
-    public void processTemplate(String templateName,String outputFileName, Map<String, Object> data) {
-        Template template = loadTemplate(templateName, TEMPLATE_DIRECTORY + templateName + ".ftl");
+    public void processTemplate(String templateName,String templateDirectory, String outputFileName, Map<String, Object> data) {
+        Template template = loadTemplate(templateName, templateDirectory + templateName + ".ftl");
         try (Writer fileWriter = new FileWriter(new File(outputFileName))) {
             template.process(data, fileWriter);
         } catch (IOException | TemplateException e) {

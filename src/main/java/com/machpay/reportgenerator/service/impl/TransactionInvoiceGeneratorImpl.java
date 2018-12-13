@@ -5,7 +5,6 @@ import com.machpay.reportgenerator.dto.TransactionInvoiceTempStorageInfo;
 import com.machpay.reportgenerator.service.ReportGeneratorService;
 import com.machpay.reportgenerator.service.TransactionInvoiceGenerator;
 import com.machpay.reportgenerator.util.FileUtils;
-import com.machpay.reportgenerator.util.XhtmlToHtmlConverter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,9 +22,6 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
         // Convert To Html with apache free marker
         convertToHtml(transactionInvoice,transactionInvoiceTempStorageInfo);
 
-        // Convert To Xhtml with Jtidy
-//        XhtmlToHtmlConverter.convertXHTMLToHTML(transactionInvoiceTempStorageInfo.getHtmlPath(), transactionInvoiceTempStorageInfo.getXhtmlPath());
-
         // Convert to PDF and store temp location
         ReportGeneratorService reportGeneratorService = new PdfGeneratorServiceImpl();
         reportGeneratorService.generate(transactionInvoiceTempStorageInfo.getHtmlPath(),transactionInvoiceTempStorageInfo.getPdfPath());
@@ -36,6 +32,6 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
         Map<String, Object> input = new HashMap<>();
         input.put("transactionInvoice",transactionInvoice);
         TemplateManagerServiceImpl templateManagerServiceImpl = new TemplateManagerServiceImpl();
-        templateManagerServiceImpl.processTemplate(transactionInvoiceTempStorageInfo.getTemplateFileName(),transactionInvoiceTempStorageInfo.getHtmlPath(),input);
+        templateManagerServiceImpl.processTemplate(transactionInvoiceTempStorageInfo.getTemplateFileName(),transactionInvoiceTempStorageInfo.getTemplateDirectoryPath(),transactionInvoiceTempStorageInfo.getHtmlPath(),input);
     }
 }

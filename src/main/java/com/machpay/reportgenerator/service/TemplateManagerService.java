@@ -7,5 +7,5 @@ import java.util.Map;
  */
 public interface TemplateManagerService {
 
-    void processTemplate(String templateName,String outputFileName, Map<String, Object> data);
+    void processTemplate(String templateName, String templateDirectory,String outputFileName, Map<String, Object> data);
 }
