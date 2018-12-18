@@ -23,7 +23,7 @@ public class PdfGeneratorDemo {
                 .setPaymentType("Account Deposit")
                 .setTransactionDate(LocalDate.now())
                 .setEstimatedDeliveryDate(LocalDate.now())
-                .setSenderState("California")
+                .setSenderState("CA")
                 .setMsbName("Moneytun LLC")
                 .setMsbAddress("3651 Lindell Rd Ste D225 Las Vegas, NV 89103")
                 .setMsbPhoneNumber("702-485-5886")

@@ -189,7 +189,7 @@
         <div class="container">
             <div class="row">
                 <div class="logo">
-                <#if transactionInvoice.senderState=="California">
+                <#if transactionInvoice.senderState=="CA">
                     <img width="200px" src="https://s3.amazonaws.com/com-machpay-raas/assets/logo_moneytun_california.png" class="someClass "></img>
                 <#else>
                     <img width="200px" src="https://s3.amazonaws.com/com-machpay-raas/assets/logo_moneytun.png" class="someClass "></img>
