@@ -26,7 +26,7 @@ public class PdfGeneratorServiceImpl implements ReportGeneratorService {
             String xHtml = readFileToString(inputFileName);
 
             ITextRenderer renderer = new ITextRenderer();
-            renderer.getFontResolver().addFont("src/main/resources/templates/Code39.ttf", IDENTITY_H, EMBEDDED);
+            renderer.getFontResolver().addFont("/tmp/invoice/Code39.ttf", IDENTITY_H, EMBEDDED);
             String baseUrl = FileSystems
                     .getDefault()
                     .getPath("src")

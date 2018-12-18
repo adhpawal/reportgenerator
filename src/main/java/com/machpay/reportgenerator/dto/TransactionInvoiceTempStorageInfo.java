@@ -20,7 +20,7 @@ public class TransactionInvoiceTempStorageInfo {
      * Set Default values for Invoice Generation.
      */
     public TransactionInvoiceTempStorageInfo(String fileNameWithoutExtension) {
-        String tempDirectoryPath  =Paths.get("src","main", "resources","templates").toUri().getPath();
+        String tempDirectoryPath  ="/tmp/invoice/";
         this.setTemplateDirectoryPath(tempDirectoryPath.endsWith("/") ? tempDirectoryPath: tempDirectoryPath + "/");
         this.setTemplateFileName("transaction_invoice");
         this.setTempBasePath("/tmp/invoice/");
