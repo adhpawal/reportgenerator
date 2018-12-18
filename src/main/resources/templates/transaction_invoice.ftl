@@ -54,14 +54,14 @@
                 padding-left: 8px;
             }
             .box{
-                width: 45%;
+                width: 30%;
                 border: 1px solid #000;
                 margin: 3px;
                 margin-right: 25px;
                 float: right;
             }
             .box-large {
-                width: 45%;
+                width: 60%;
                 border: 1px solid #000;
                 margin: 3px;
                 float: left;
@@ -94,7 +94,7 @@
             .invoice-number{
                 color: red;
                 font-weight: bold;
-                font-size: 14px;
+                font-size: 24px;
                 text-align: center;
             }
 
@@ -105,8 +105,13 @@
             }
 
             .center-text{
-                font-size: 12px;
+                font-size: 13px;
                 text-align: center;
+            }
+            .small-text{
+                font-size: 14px;
+                text-align:center;
+                padding:3px
             }
 
             .bold-text{
@@ -120,7 +125,7 @@
                 text-align: center;
             }
             .licensee-text p{
-                text-align: right;
+                text-align: center;
             }
             .agent-text p{
                 text-align: left;
@@ -192,11 +197,12 @@
                 </div>
                 <div class="top-content">
                     <div class="box-large">
-                        <div class="border-bottom center-text bold-text">Transaction Number</div>
-                        <div class="border-bottom invoice-number center-text">${transactionInvoice.transactionReferenceNumber}</div>
-                        <div class="border-bottom center-text bold-text">Transaction Reference Number</div>
-                        <div class="border-bottom center-text">${transactionInvoice.referenceNumber}</div>
-                        <div class="bold-text center-text">${transactionInvoice.paymentType.toUpperCase()}</div>
+                        <div class="border-bottom small-text bold-text">Transaction Number</div>
+                        <div class="border-bottom invoice-number">${transactionInvoice.transactionReferenceNumber}</div>
+                        <div class="border-bottom small-text ">
+                        ${transactionInvoice.referenceNumber} /<b>${transactionInvoice.paymentType.toUpperCase()}</b>
+                        </div>
+
                     </div>
                     <div class="box">
                         <div class="border-bottom grey-title center-text">Customer's Copy</div>
@@ -210,9 +216,6 @@
             <div class="row license-agent-content">
                 <table>
                     <tr>
-                        <td>
-
-                        </td>
                         <td>
                             <div class="div-content licensee-text bold-text">
                                 <p>Service Provider: ${transactionInvoice.msbName}</p>
