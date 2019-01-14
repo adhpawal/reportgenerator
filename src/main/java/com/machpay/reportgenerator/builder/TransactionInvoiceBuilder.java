@@ -52,9 +52,18 @@ public class TransactionInvoiceBuilder {
     private String agentPhoneNumber;
     private String note;
     private String referenceNumber;
+    private String receiverBankAccountNumber;
+    private String stateEmail;
+    private String stateWebsite;
+    private String stateOfficeName;
 
     public TransactionInvoiceBuilder setTransactionReferenceNumber(String transactionReferenceNumber) {
         this.transactionReferenceNumber = transactionReferenceNumber;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setReceiverBankAccountNumber(String receiverBankAccountNumber) {
+        this.receiverBankAccountNumber = receiverBankAccountNumber;
         return this;
     }
 
@@ -268,6 +277,21 @@ public class TransactionInvoiceBuilder {
         return this;
     }
 
+    public TransactionInvoiceBuilder setStateOffice(String officeName) {
+        this.stateOfficeName = officeName;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setStateEmail(String stateEmail) {
+        this.stateEmail = stateEmail;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setStateWebsite(String website) {
+        this.stateWebsite = website;
+        return this;
+    }
+
     public TransactionInvoice build(){
         TransactionInvoice transactionInvoice = new TransactionInvoice();
         transactionInvoice.setTransactionReferenceNumber(this.transactionReferenceNumber);
@@ -313,6 +337,10 @@ public class TransactionInvoiceBuilder {
         transactionInvoice.setAgentPhoneNumber(this.agentPhoneNumber);
         transactionInvoice.setNote(this.note);
         transactionInvoice.setReferenceNumber(this.referenceNumber);
+        transactionInvoice.setReceiverBankAccountNumber(this.receiverBankAccountNumber);
+        transactionInvoice.setStateOfficeName(this.stateOfficeName);
+        transactionInvoice.setStateEmail(this.stateEmail);
+        transactionInvoice.setStateWebsite(this.stateWebsite);
         return transactionInvoice;
     }
 }

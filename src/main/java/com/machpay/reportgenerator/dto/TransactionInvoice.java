@@ -44,6 +44,7 @@ public class TransactionInvoice {
     private String receiverBankName;
     private String receiverBankBranchName;
     private String receiverAccountType;
+    private String receiverBankAccountNumber;
     private String msbName;
     private String msbAddress;
     private String msbPhoneNumber;
@@ -51,6 +52,9 @@ public class TransactionInvoice {
     private String agentAddress;
     private String agentPhoneNumber;
     private String note;
+    private String stateEmail;
+    private String stateWebsite;
+    private String stateOfficeName;
 
     public String getTransactionReferenceNumber() {
         return transactionReferenceNumber;
@@ -394,5 +398,37 @@ public class TransactionInvoice {
 
     public void setReferenceNumber(String referenceNumber) {
         this.referenceNumber = referenceNumber;
+    }
+
+    public String getReceiverBankAccountNumber() {
+        return receiverBankAccountNumber;
+    }
+
+    public void setReceiverBankAccountNumber(String receiverBankAccountNumber) {
+        this.receiverBankAccountNumber = receiverBankAccountNumber;
+    }
+
+    public String getStateEmail() {
+        return stateEmail;
+    }
+
+    public void setStateEmail(String stateEmail) {
+        this.stateEmail = stateEmail;
+    }
+
+    public String getStateWebsite() {
+        return stateWebsite;
+    }
+
+    public void setStateWebsite(String stateWebsite) {
+        this.stateWebsite = stateWebsite;
+    }
+
+    public String getStateOfficeName() {
+        return stateOfficeName;
+    }
+
+    public void setStateOfficeName(String stateOfficeName) {
+        this.stateOfficeName = stateOfficeName;
     }
 }

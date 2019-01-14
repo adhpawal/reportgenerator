@@ -1,7 +1,5 @@
 package com.machpay.reportgenerator.dto;
 
-import java.nio.file.Paths;
-
 /**
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */

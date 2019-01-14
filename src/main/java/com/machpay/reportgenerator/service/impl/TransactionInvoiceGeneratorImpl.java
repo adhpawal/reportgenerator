@@ -18,6 +18,11 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
     public void generateTransactionInvoice(TransactionInvoice transactionInvoice,TransactionInvoiceTempStorageInfo transactionInvoiceTempStorageInfo) {
 
         FileUtils.createDirectoryIfNotExist(transactionInvoiceTempStorageInfo.getTempBasePath());
+        if(transactionInvoice.getSenderState().equalsIgnoreCase("California") || transactionInvoice.getSenderState().equalsIgnoreCase("Nevada")){
+            transactionInvoiceTempStorageInfo.setTemplateFileName("transaction_invoice");
+        }else{
+            transactionInvoiceTempStorageInfo.setTemplateFileName("prabhu_transaction_invoice");
+        }
         
         // Convert To Html with apache free marker
         convertToHtml(transactionInvoice,transactionInvoiceTempStorageInfo);

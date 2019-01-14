@@ -21,6 +21,7 @@ public class PdfGeneratorDemo {
                 .setTransactionReferenceNumber("169023527528")
                 .setTransactionStatus("CANCELEDD")
                 .setPaymentType("Account Deposit")
+                .setSenderBankName("XOXO")
                 .setTransactionDate(LocalDate.now())
                 .setEstimatedDeliveryDate(LocalDate.now())
                 .setSenderState("CA")
@@ -50,6 +51,9 @@ public class PdfGeneratorDemo {
                 .setReceiverAmount(BigDecimal.valueOf(36305.00))
                 .setAffiliateName("REBTEL")
                 .setNote("MESSAGE")
+                .setReceiverBankAccountNumber("XXXXXXXXXXXXXXXXXX")
+                .setReceiverBankName("ADI Finanace").setSenderState("New York")
+                .setStateEmail("ad@asd.org").setStateOffice("abc.org").setStateWebsite("abc.org")
                 .build();
         TransactionInvoiceGenerator transactionInvoiceGenerator = new TransactionInvoiceGeneratorImpl();
         transactionInvoiceGenerator.generateTransactionInvoice(transactionInvoice,transactionInvoiceTempStorageInfo);
