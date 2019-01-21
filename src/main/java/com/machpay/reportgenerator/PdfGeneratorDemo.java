@@ -53,7 +53,6 @@ public class PdfGeneratorDemo {
                 .setNote("MESSAGE")
                 .setReceiverBankAccountNumber("XXXXXXXXXXXXXXXXXX")
                 .setReceiverBankName("ADI Finanace").setSenderState("New York")
-                .setStateEmail("ad@asd.org").setStateOffice("abc.org").setStateWebsite("abc.org")
                 .build();
         TransactionInvoiceGenerator transactionInvoiceGenerator = new TransactionInvoiceGeneratorImpl();
         transactionInvoiceGenerator.generateTransactionInvoice(transactionInvoice,transactionInvoiceTempStorageInfo);

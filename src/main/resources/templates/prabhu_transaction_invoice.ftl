@@ -88,46 +88,46 @@
     </div>
     <div style="position:absolute;left:309.80px;top:171.34px" class="cls_004"><span class="cls_004">Sender:   ${transactionInvoice.senderFirstName} ${transactionInvoice.senderLastName}</span>
     </div>
-    <div style="position:absolute;left:284.73px;top:182.60px" class="cls_004"><span class="cls_004">Send Amount:</span>
+    <div style="position:absolute;left: 285.73px;top:182.60px" class="cls_004"><span class="cls_004">Send Amount:</span>
     </div>
-    <div style="position:absolute;left:351.29px;top:182.60px" class="cls_004"><span class="cls_004">${transactionInvoice.senderTotalAmount}  (${transactionInvoice.senderCurrency})</span>
+    <div style="position:absolute;left:351.29px;top:182.60px" class="cls_004"><span class="cls_004">${transactionInvoice.senderAmount}  (${transactionInvoice.senderCurrency})</span>
     </div>
-    <div style="position:absolute;left:263.93px;top:193.85px" class="cls_004"><span
+    <div style="position:absolute;left: 261.93px;top:193.85px" class="cls_004"><span
             class="cls_004">Fee Paid by Sender:</span></div>
     <div style="position:absolute;left:360.73px;top:193.85px" class="cls_004"><span class="cls_004">${transactionInvoice.fee} (${transactionInvoice.senderCurrency})</span>
     </div>
-    <div style="position:absolute;left:197.37px;top:205.11px" class="cls_004"><span class="cls_004">Total Amount from Funding Account:</span>
+    <div style="position:absolute;left: 203.37px;top:205.11px;" class="cls_004"><span class="cls_004">Total Amount from Funding Account:</span>
     </div>
     <div style="position:absolute;left:351.29px;top:205.11px" class="cls_004"><span class="cls_004">${transactionInvoice.senderTotalAmount} (${transactionInvoice.senderCurrency})</span>
     </div>
     <div style="position:absolute;left:272.71px;top:227.62px" class="cls_004"><span class="cls_004">Funding Account:  ${transactionInvoice.senderBankName} </span>
     </div>
-    <div style="position:absolute;left:351.28px;top:250.13px" class="cls_004"><span class="cls_004">${transactionInvoice.receiverFirstName} ${transactionInvoice.receiverLastName}</span>
+    <div style="position:absolute;left: 339.28px;top:250.13px" class="cls_004"><span class="cls_004">${transactionInvoice.receiverFirstName} ${transactionInvoice.receiverLastName}</span>
     </div>
     <div style="position:absolute;left:301.58px;top:261.38px" class="cls_004"><span class="cls_004">Recipient:   ${transactionInvoice.receiverAddress}</span>
     </div>
-    <div style="position:absolute;left:351.28px;top:272.64px" class="cls_004"><span
+    <div style="position:absolute;left: 339.28px;top:272.64px" class="cls_004"><span
             class="cls_004">Phone: ${transactionInvoice.receiverPhoneNumber}</span></div>
-    <div style="position:absolute;left:351.28px;top:295.15px" class="cls_004"><span class="cls_004">${transactionInvoice.receiverBankAccountNumber}</span>
+    <div style="position:absolute;left: 339.28px;top:295.15px" class="cls_004"><span class="cls_004">${transactionInvoice.receiverBankAccountNumber}</span>
     </div>
-    <div style="position:absolute;left:232.39px;top:306.40px" class="cls_004"><span class="cls_004">Recipient Bank Instructions:   Account Deposit</span>
+    <div style="position:absolute;left: 234.39px;top:306.40px" class="cls_004"><span class="cls_004">Recipient Bank Instructions:   Account Deposit</span>
     </div>
-    <div style="position:absolute;left:351.28px;top:317.66px" class="cls_004"><span class="cls_004">${transactionInvoice.receiverBankName}</span>
+    <div style="position:absolute;left: 339.28px;top:317.66px" class="cls_004"><span class="cls_004">${transactionInvoice.receiverBankName}</span>
     </div>
-    <div style="position:absolute;left:238.01px;top:328.91px" class="cls_004"><span class="cls_004">Recipient Receipt Amount:</span>
+    <div style="position:absolute;left: 239.01px;top:328.91px" class="cls_004"><span class="cls_004">Recipient Receipt Amount:</span>
     </div>
     <div style="position:absolute;left:351.29px;top:328.91px" class="cls_004"><span
             class="cls_004">${transactionInvoice.receiverAmount}(${transactionInvoice.receiverCurrency})</span></div>
-    <div style="position:absolute;left:157.02px;top:340.17px" class="cls_004"><span class="cls_004">Expected Availability in Recipient Bank Account:   Within 3 Business Days</span>
+    <div style="position:absolute;left: 159.02px;top:340.17px;" class="cls_004"><span class="cls_004">Expected Availability in Recipient Bank Account:   Within 3 Business Days</span>
     </div>
-    <div style="position:absolute;left:280.99px;top:351.42px" class="cls_004"><span
+    <div style="position:absolute;left: 276.99px;top:351.42px" class="cls_004"><span
             class="cls_004">Exchange Rate:</span></div>
-    <div style="position:absolute;left:351.28px;top:351.42px" class="cls_004"><span class="cls_004">1.00 (USD) = ${transactionInvoice.exchangeRate} (${transactionInvoice.receiverCurrency})</span>
+    <div style="position:absolute;left: 339.28px;top:351.42px" class="cls_004"><span class="cls_004">1.00 (USD) = ${transactionInvoice.exchangeRate} (${transactionInvoice.receiverCurrency})</span>
     </div>
-    <div style="position:absolute;left:264.14px;top:373.93px" class="cls_004"><span class="cls_004">Reference Number:   ${transactionInvoice.transactionReferenceNumber} </span>
+    <div style="position:absolute;left:264.14px;top:373.93px" class="cls_004"><span class="cls_004">Reference Number:   ${transactionInvoice.referenceNumber} </span>
     </div>
     <div style="position:absolute;left:290.80px;top:385.19px" class="cls_004"><span
-            class="cls_004">Pin Number:   ${transactionInvoice.referenceNumber}</span></div>
+            class="cls_004">Pin Number:  ${transactionInvoice.transactionReferenceNumber} </span></div>
     <div style="position:absolute;left:53.40px;top:407.70px" class="cls_005"><span class="cls_005">Note:</span></div>
     <div style="position:absolute;left:53.40px;top:428.70px" class="cls_005"><span class="cls_005">Your Error Resolution Rights:</span>
     </div>
@@ -157,11 +157,11 @@
     </div>
     <div style="position:absolute;left:53.40px;top:640.30px" class="cls_005"><span class="cls_005">For questions or complaints about Prabhu Group Inc., please contact:</span>
     </div>
-    <div style="position:absolute;left:53.40px;top:674.81px" class="cls_005"><span class="cls_005">${transactionInvoice.stateOfficeName}</span>
+    <div style="position:absolute;left:53.40px;top:674.81px" class="cls_005"><span class="cls_005">${transactionInvoice.stateOfficeName!}</span>
     </div>
-    <div style="position:absolute;left:53.40px;top:688.32px" class="cls_005"><span class="cls_005">${transactionInvoice.stateEmail}</span>
+    <div style="position:absolute;left:53.40px;top:688.32px" class="cls_005"><span class="cls_005">${transactionInvoice.stateEmail!}</span>
     </div>
-    <div style="position:absolute;left:53.40px;top:701.82px" class="cls_005"><span class="cls_005"> ${transactionInvoice.stateWebsite}</span></div>
+    <div style="position:absolute;left:53.40px;top:701.82px" class="cls_005"><span class="cls_005"> ${transactionInvoice.stateWebsite!}</span></div>
     <div style="position:absolute;left:53.40px;top:722.83px" class="cls_005"><span class="cls_005">Consumer Financial Protection Bureau (CFPB):</span>
     </div>
     <div style="position:absolute;left:53.40px;top:736.34px" class="cls_005"><span class="cls_005">(855) 411-CFPB (2372) TTY/TDD (855) 729-CFPB (2372)</span>

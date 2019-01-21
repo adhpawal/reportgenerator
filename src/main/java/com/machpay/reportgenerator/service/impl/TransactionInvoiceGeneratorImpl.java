@@ -18,7 +18,7 @@ public class TransactionInvoiceGeneratorImpl implements TransactionInvoiceGenera
     public void generateTransactionInvoice(TransactionInvoice transactionInvoice,TransactionInvoiceTempStorageInfo transactionInvoiceTempStorageInfo) {
 
         FileUtils.createDirectoryIfNotExist(transactionInvoiceTempStorageInfo.getTempBasePath());
-        if(transactionInvoice.getSenderState().equalsIgnoreCase("California") || transactionInvoice.getSenderState().equalsIgnoreCase("Nevada")){
+        if(transactionInvoice.getSenderState().equalsIgnoreCase("CA") || transactionInvoice.getSenderState().equalsIgnoreCase("NV")){
             transactionInvoiceTempStorageInfo.setTemplateFileName("transaction_invoice");
         }else{
             transactionInvoiceTempStorageInfo.setTemplateFileName("prabhu_transaction_invoice");
