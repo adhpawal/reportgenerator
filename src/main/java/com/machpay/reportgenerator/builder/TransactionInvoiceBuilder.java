@@ -56,9 +56,18 @@ public class TransactionInvoiceBuilder {
     private String payeeAddressLine1;
     private String payeeAddressLine2;
     private String payeePhoneNumber;
+    private String receiverBankAccountNumber;
+    private String stateEmail;
+    private String stateWebsite;
+    private String stateOfficeName;
 
     public TransactionInvoiceBuilder setTransactionReferenceNumber(String transactionReferenceNumber) {
         this.transactionReferenceNumber = transactionReferenceNumber;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setReceiverBankAccountNumber(String receiverBankAccountNumber) {
+        this.receiverBankAccountNumber = receiverBankAccountNumber;
         return this;
     }
 
@@ -291,6 +300,20 @@ public class TransactionInvoiceBuilder {
         this.payeePhoneNumber = payeePhoneNumber;
         return this;
     }
+    public TransactionInvoiceBuilder setStateOffice(String officeName) {
+        this.stateOfficeName = officeName;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setStateEmail(String stateEmail) {
+        this.stateEmail = stateEmail;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setStateWebsite(String website) {
+        this.stateWebsite = website;
+        return this;
+    }
 
     public TransactionInvoice build(){
         TransactionInvoice transactionInvoice = new TransactionInvoice();
@@ -341,6 +364,10 @@ public class TransactionInvoiceBuilder {
         transactionInvoice.setPayeeAddressLine1(this.payeeAddressLine1);
         transactionInvoice.setPayeeAddressLine2(this.payeeAddressLine2);
         transactionInvoice.setPayeePhoneNumber(this.payeePhoneNumber);
+        transactionInvoice.setReceiverBankAccountNumber(this.receiverBankAccountNumber);
+        transactionInvoice.setStateOfficeName(this.stateOfficeName);
+        transactionInvoice.setStateEmail(this.stateEmail);
+        transactionInvoice.setStateWebsite(this.stateWebsite);
         return transactionInvoice;
     }
 }

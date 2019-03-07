@@ -44,6 +44,7 @@ public class TransactionInvoice {
     private String receiverBankName;
     private String receiverBankBranchName;
     private String receiverAccountType;
+    private String receiverBankAccountNumber;
     private String msbName;
     private String msbAddress;
     private String msbPhoneNumber;
@@ -55,7 +56,9 @@ public class TransactionInvoice {
     private String payeeAddressLine1;
     private String payeeAddressLine2;
     private String payeePhoneNumber;
-
+    private String stateEmail;
+    private String stateWebsite;
+    private String stateOfficeName;
 
     public String getTransactionReferenceNumber() {
         return transactionReferenceNumber;
@@ -71,6 +74,14 @@ public class TransactionInvoice {
 
     public void setTransactionStatus(String transactionStatus) {
         this.transactionStatus = transactionStatus;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
     }
 
     public String getSenderFirstName() {
@@ -337,6 +348,14 @@ public class TransactionInvoice {
         this.receiverAccountType = receiverAccountType;
     }
 
+    public String getReceiverBankAccountNumber() {
+        return receiverBankAccountNumber;
+    }
+
+    public void setReceiverBankAccountNumber(String receiverBankAccountNumber) {
+        this.receiverBankAccountNumber = receiverBankAccountNumber;
+    }
+
     public String getMsbName() {
         return msbName;
     }
@@ -393,14 +412,6 @@ public class TransactionInvoice {
         this.note = note;
     }
 
-    public String getReferenceNumber() {
-        return referenceNumber;
-    }
-
-    public void setReferenceNumber(String referenceNumber) {
-        this.referenceNumber = referenceNumber;
-    }
-
     public String getPayeeName() {
         return payeeName;
     }
@@ -431,5 +442,29 @@ public class TransactionInvoice {
 
     public void setPayeePhoneNumber(String payeePhoneNumber) {
         this.payeePhoneNumber = payeePhoneNumber;
+    }
+
+    public String getStateEmail() {
+        return stateEmail;
+    }
+
+    public void setStateEmail(String stateEmail) {
+        this.stateEmail = stateEmail;
+    }
+
+    public String getStateWebsite() {
+        return stateWebsite;
+    }
+
+    public void setStateWebsite(String stateWebsite) {
+        this.stateWebsite = stateWebsite;
+    }
+
+    public String getStateOfficeName() {
+        return stateOfficeName;
+    }
+
+    public void setStateOfficeName(String stateOfficeName) {
+        this.stateOfficeName = stateOfficeName;
     }
 }

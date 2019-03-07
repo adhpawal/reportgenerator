@@ -20,7 +20,6 @@ import java.util.Map;
 
 public class TemplateManagerServiceImpl implements TemplateManagerService {
     private Configuration freemarkerConfig;
-    private static final String TEMPLATE_DIRECTORY = "src/main/resources/templates/";
 
     TemplateManagerServiceImpl() {
         freemarkerConfig = new Configuration(Configuration.VERSION_2_3_23);
