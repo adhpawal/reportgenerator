@@ -51,6 +51,11 @@ public class TransactionInvoice {
     private String agentAddress;
     private String agentPhoneNumber;
     private String note;
+    private String payeeName;
+    private String payeeAddressLine1;
+    private String payeeAddressLine2;
+    private String payeePhoneNumber;
+
 
     public String getTransactionReferenceNumber() {
         return transactionReferenceNumber;
@@ -394,5 +399,37 @@ public class TransactionInvoice {
 
     public void setReferenceNumber(String referenceNumber) {
         this.referenceNumber = referenceNumber;
+    }
+
+    public String getPayeeName() {
+        return payeeName;
+    }
+
+    public void setPayeeName(String payeeName) {
+        this.payeeName = payeeName;
+    }
+
+    public String getPayeeAddressLine1() {
+        return payeeAddressLine1;
+    }
+
+    public void setPayeeAddressLine1(String payeeAddressLine1) {
+        this.payeeAddressLine1 = payeeAddressLine1;
+    }
+
+    public String getPayeeAddressLine2() {
+        return payeeAddressLine2;
+    }
+
+    public void setPayeeAddressLine2(String payeeAddressLine2) {
+        this.payeeAddressLine2 = payeeAddressLine2;
+    }
+
+    public String getPayeePhoneNumber() {
+        return payeePhoneNumber;
+    }
+
+    public void setPayeePhoneNumber(String payeePhoneNumber) {
+        this.payeePhoneNumber = payeePhoneNumber;
     }
 }

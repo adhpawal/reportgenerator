@@ -52,6 +52,10 @@ public class TransactionInvoiceBuilder {
     private String agentPhoneNumber;
     private String note;
     private String referenceNumber;
+    private String payeeName;
+    private String payeeAddressLine1;
+    private String payeeAddressLine2;
+    private String payeePhoneNumber;
 
     public TransactionInvoiceBuilder setTransactionReferenceNumber(String transactionReferenceNumber) {
         this.transactionReferenceNumber = transactionReferenceNumber;
@@ -268,6 +272,26 @@ public class TransactionInvoiceBuilder {
         return this;
     }
 
+    public TransactionInvoiceBuilder setPayeeName(String payeeName) {
+        this.payeeName = payeeName;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setPayeeAddressLine1(String payeeAddressLine1) {
+        this.payeeAddressLine1 = payeeAddressLine1;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setPayeeAddressLine2(String payeeAddressLine2) {
+        this.payeeAddressLine2 = payeeAddressLine2;
+        return this;
+    }
+
+    public TransactionInvoiceBuilder setPayeePhoneNumber(String payeePhoneNumber) {
+        this.payeePhoneNumber = payeePhoneNumber;
+        return this;
+    }
+
     public TransactionInvoice build(){
         TransactionInvoice transactionInvoice = new TransactionInvoice();
         transactionInvoice.setTransactionReferenceNumber(this.transactionReferenceNumber);
@@ -313,6 +337,10 @@ public class TransactionInvoiceBuilder {
         transactionInvoice.setAgentPhoneNumber(this.agentPhoneNumber);
         transactionInvoice.setNote(this.note);
         transactionInvoice.setReferenceNumber(this.referenceNumber);
+        transactionInvoice.setPayeeName(this.payeeName);
+        transactionInvoice.setPayeeAddressLine1(this.payeeAddressLine1);
+        transactionInvoice.setPayeeAddressLine2(this.payeeAddressLine2);
+        transactionInvoice.setPayeePhoneNumber(this.payeePhoneNumber);
         return transactionInvoice;
     }
 }

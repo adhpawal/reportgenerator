@@ -278,14 +278,14 @@
                 <td class="amount"><p>${transactionInvoice.exchangeRate!} <br></br>${transactionInvoice.receiverCurrency!}
                 </p></td>
                 <td colspan="2" rowspan="3" class="amount"><p>
-                    VTNetwork Limited<br></br>
+                    ${transactionInvoice.payeeName!}<br></br>
 
-                    No. 5 Beckley Street, off Adeyi<br></br>
+                    ${transactionInvoice.payeeAddressLine1!}<br></br>
 
 
-                    Old Bodija, Ibadan. Oyo-State, Nigeria<br></br>
+                    ${transactionInvoice.payeeAddressLine2!}<br></br>
 
-                    Tel: 07041911945, 08138994140<br></br>
+                    Tel: ${transactionInvoice.payeePhoneNumber!}<br></br>
 
                 </p></td>
             </tr>

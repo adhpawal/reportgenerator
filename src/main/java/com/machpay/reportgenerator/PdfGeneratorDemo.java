@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class PdfGeneratorDemo {
 
     public static void main(String[] args) {
-        TransactionInvoiceTempStorageInfo transactionInvoiceTempStorageInfo = new TransactionInvoiceTempStorageInfo("pawal");
+        TransactionInvoiceTempStorageInfo transactionInvoiceTempStorageInfo = new TransactionInvoiceTempStorageInfo("invoice");
 
         TransactionInvoice transactionInvoice = new TransactionInvoiceBuilder()
                 .setTransactionReferenceNumber("169023527528")
@@ -50,6 +50,10 @@ public class PdfGeneratorDemo {
                 .setReceiverAmount(BigDecimal.valueOf(36305.00))
                 .setAffiliateName("REBTEL")
                 .setNote("MESSAGE")
+                .setPayeeName("VTNetwork Limited")
+                .setPayeeAddressLine1("No. 5 Beckley Street, off Adeyi")
+                .setPayeeAddressLine2("Old Bodija, Ibadan. Oyo-State, Nigeria")
+                .setPayeePhoneNumber("07041911945")
                 .build();
         TransactionInvoiceGenerator transactionInvoiceGenerator = new TransactionInvoiceGeneratorImpl();
         transactionInvoiceGenerator.generateTransactionInvoice(transactionInvoice,transactionInvoiceTempStorageInfo);
